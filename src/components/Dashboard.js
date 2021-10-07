@@ -10,6 +10,7 @@ export default class Dashboard extends Component {
         telegram:'',
         twitter:'',
         walletId:'',
+        faebook:''
     }
     componentDidMount(){
         let done = localStorage.getItem('done');
@@ -32,7 +33,8 @@ export default class Dashboard extends Component {
                     telegram:this.state.telegram,
                     email:this.state.email, 
                     twitter:this.state.twitter,
-                    walletId:this.state.walletId
+                    walletId:this.state.walletId,
+                    facebook:this.state.facebook
                 })
                 this.setState({done:true});
                 localStorage.setItem('done','yes');
@@ -51,8 +53,11 @@ export default class Dashboard extends Component {
                 {!this.state.done && <div className="card m-auto border-0 shadow-xl text-light" style={{maxWidth:'400px',backgroundColor:'#00000054',backdropFilter:'blur(10px)'}}>
                     <div className="card-body d-flex align-items-center h-100 px-5">
                         <div className="w-100">
-                            <div className="mb-4 d-flex justify-content-center">
+                            <div className="mb-1 d-flex justify-content-center">
                                 <img src="/logo.png" alt="" height="50" />
+                            </div>
+                            <div className="mb-4 d-flex justify-content-center">
+                                <span>WORKS</span>
                             </div>
                             <div class="form-group mb-5 d-flex justify-content-center ">
                                 <h4 className="card-title">Participate in Airdrop</h4>
@@ -60,30 +65,46 @@ export default class Dashboard extends Component {
                             </div>
                             <div class="mb-4 d-flex justify-content-between">
                                 <label>1. Follow our Twitter Handle</label>
+                                <a href="https://twitter.com/thecoinworks" target="_blank">
                                 <button className="btn btn-primary shadow">Follow</button>
+                                </a>
                             </div>
                             <div class="mb-4 d-flex justify-content-between">
                                 <label>2. Join Our Telegram group</label>
+                                <a href="https://t.me/thecoinworks" target="_blank">
                                 <button className="btn btn-primary shadow">Join Now</button>
+                                </a>
                             </div>
                             <div class="mb-4 d-flex justify-content-between">
                                 <label>3. Retweet Pinned Post</label>
+                                <a href="https://twitter.com/thecoinworks" target="_blank">
                                 <button className="btn btn-primary shadow">Retweet</button>
+                                </a>
+                            </div>
+                            <div class="mb-4 d-flex justify-content-between">
+                                <label>4. Follow us on facebook</label>
+                                <a href="https://www.facebook.com/thecoinworks" target="_blank">
+                                <button className="btn btn-primary shadow">Follow</button>
+                                </a>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">4. Email address</label>
+                                <label for="exampleFormControlInput1" class="form-label">5. Email address</label>
                                 <input type="email" value={this.state.email} onChange={e=>{this.setState({email:e.target.value})}} class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">5. Twitter Handle</label>
+                                <label for="exampleFormControlInput1" class="form-label">6. Twitter Handle</label>
                                 <input type="text" value={this.state.twitter} onChange={e=>{this.setState({twitter:e.target.value})}} class="form-control" id="exampleFormControlInput1" placeholder="@example"/>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">6. Telegram Handle</label>
+                                <label for="exampleFormControlInput1" class="form-label">7. Telegram Handle</label>
                                 <input type="text" value={this.state.telegram} onChange={e=>{this.setState({telegram:e.target.value})}} class="form-control" id="exampleFormControlInput1" placeholder="@example"/>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">7. Wallet Address</label>
+                                <label for="exampleFormControlInput1" class="form-label">8. Facebook profile link</label>
+                                <input type="text" value={this.state.facebook} onChange={e=>{this.setState({facebook:e.target.value})}} class="form-control" id="exampleFormControlInput1" placeholder="0x2Ef8ac6e2579780f56d295ABf661DBf400aF205D"/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">9. Wallet Address</label>
                                 <input type="text" value={this.state.walletId} onChange={e=>{this.setState({walletId:e.target.value})}} class="form-control" id="exampleFormControlInput1" placeholder="0x2Ef8ac6e2579780f56d295ABf661DBf400aF205D"/>
                             </div>
                             <div class="form-check mb-3">
