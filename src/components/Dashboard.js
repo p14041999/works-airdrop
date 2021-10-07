@@ -10,7 +10,7 @@ export default class Dashboard extends Component {
         telegram:'',
         twitter:'',
         walletId:'',
-        faebook:''
+        facebook:''
     }
     componentDidMount(){
         let done = localStorage.getItem('done');
